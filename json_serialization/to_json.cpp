@@ -33,8 +33,8 @@
 #include <iostream>
 
 #define RAPIDJSON_HAS_STDSTRING 1
-#include <rapidjson/prettywriter.h> // for stringify JSON
-#include <rapidjson/document.h>     // rapidjson's DOM-style API
+#include "rapidjson/prettywriter.h" // for stringify JSON
+#include "rapidjson/document.h"     // rapidjson's DOM-style API
 #include <rttr/type>
 
 using namespace rapidjson;
