@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.7)
 project(server)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(server main.cpp mysql_connect.h)
+add_executable(server main.cpp sql_module/mysql_connect.h)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/install/include")
 link_directories("${CMAKE_CURRENT_SOURCE_DIR}/install/lib")
