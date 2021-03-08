@@ -1,6 +1,7 @@
 #include <iostream>
 #include "rttr/registration"
 #include "json_serialization/to_json.cpp"
+#include "json_serialization/from_json.cpp"
 
 struct test {
     std::string name;
