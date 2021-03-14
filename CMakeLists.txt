@@ -3,7 +3,11 @@ project(server)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(server main.cpp sql_module/mysql_connect.h)
+add_executable(server main.cpp sql_module/mysql_connect.h test_moduel/test_moduel.cpp test_moduel/test_moduel.h test_moduel/Register.cpp common/CommonData.h common/Register.cpp)
+
+add_subdirectory(test_moduel)
+
+include_directories(common json_serialization)
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/install/include")
 link_directories("${CMAKE_CURRENT_SOURCE_DIR}/install/lib")

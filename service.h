@@ -52,9 +52,9 @@ int service() {
     httplib::Server svr;
     Context context;
     context.loadLibrary(
-            "libImpl1API.so");
+            "test_moduel.so");
     context.loadLibrary(
-            "libImpl2API.so");
+            "test_moduel.so");
 
     initWebServer(context.getAllType(), svr);
 
