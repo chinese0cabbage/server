@@ -3,3 +3,13 @@
 //
 
 #include "test_moduel.h"
+
+ReposeData test_moduel::out() {
+    ReposeData result;
+    result.code=200;
+    result.content="there is content";
+    result.message="test_moduel";
+    return result;
+}
+
+test_moduel::test_moduel() {}

@@ -6,4 +6,11 @@
 #include "CommonData.h"
 #define SERVER_TEST_MODUEL_H
 
+class test_moduel{
+public:
+    test_moduel();
+
+    ReposeData out();
+};
+
 #endif //SERVER_TEST_MODUEL_H

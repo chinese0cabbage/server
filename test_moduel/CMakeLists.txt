@@ -1,5 +1,8 @@
-include_directories(.)
+project(test_moduel)
 
-set(depent server.common)
+include_directories(include)
 
-include_directories(../common)
+AUX_SOURCE_DIRECTORY(src DIR_SRCS)
+
+add_library(shared_1 SHARED include/test.h src/test.cpp)
+target_link_directories(shared_1 PUBLIC ${PROJECT_SOURCE_DIR})

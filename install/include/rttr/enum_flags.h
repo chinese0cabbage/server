@@ -247,14 +247,14 @@ class enum_flags
         RTTR_CONSTEXPR RTTR_INLINE enum_flags operator~() const RTTR_NOEXCEPT;
 
         /*!
-         * \brief This will test whether a flag was set or not.
+         * \brief This will test_moduel whether a flag was set or not.
          *
          * \return `true`, when no flag is set, otherwise `false`.
          */
         RTTR_CONSTEXPR RTTR_INLINE bool operator!() const RTTR_NOEXCEPT;
 
         /*!
-         * \brief This will test whether the given flag \p flag was set.
+         * \brief This will test_moduel whether the given flag \p flag was set.
          *
          * \return `true`, when the flag is set, otherwise `false`.
          */

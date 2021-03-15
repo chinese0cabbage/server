@@ -52,9 +52,7 @@ int service() {
     httplib::Server svr;
     Context context;
     context.loadLibrary(
-            "test_moduel.so");
-    context.loadLibrary(
-            "test_moduel.so");
+            "libtest_moduel.so");
 
     initWebServer(context.getAllType(), svr);
 
