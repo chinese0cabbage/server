@@ -22,10 +22,10 @@ void initWebServer(std::vector<rttr::type> types, httplib::Server &svr) {
             for (auto m:ms) {
                 std::string methodName = m.get_name().data();
                 std::string url = "/" + version + "/" + methodName;
-//                LOG_INFO << url;
+                LOG(INFO) << url;
                 rttr::array_range<rttr::parameter_info> infos = m.get_parameter_infos();
                 if (infos.size() > 1) {
-//                    LOG_ERROR << "web api only support one json object";
+                    LOG(INFO) << "web api only support one json object";
                     continue;
                 }
                 svr.Post(url.data(), [infos, obj2, m](const httplib::Request &req, httplib::Response &res) {
@@ -52,7 +52,8 @@ int service() {
     httplib::Server svr;
     Context context;
     context.loadLibrary(
-            "libtest_moduel.so");
+            "test_moduel/libtest_moduel.so");
+//    context.loadLibrary("/libshared_1.so");
 
     initWebServer(context.getAllType(), svr);
 

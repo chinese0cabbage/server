@@ -4,8 +4,5 @@
 
 #include "test.h"
 
-int te(){
-    test_moduel t;
-    t.a=10;
-}
+
 

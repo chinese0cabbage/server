@@ -3,10 +3,14 @@
 //
 
 #ifndef SERVER_TEST_H
+#include "string"
 #define SERVER_TEST_H
 
-struct test_moduel{
-    int a;
+class test{
+public:
+    test(){};
+
+    virtual std::string out()=0;
 };
 
 #endif //SERVER_TEST_H

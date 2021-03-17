@@ -6,16 +6,19 @@
 #include <string>
 #include <vector>
 #include <rttr/registration.h>
+#include "boost/shared_ptr.hpp"
 #include <rttr/library.h>
 #include <map>
+#include <iostream>
+#include "glog/logging.h"
 #define SERVER_CONTEXT_H
 
 class Context {
 public:
-    Context(){}
+    Context()= default;
 
     template<typename T>
-    const std::shared_ptr<T> create(std::string vendor) {
+    std::shared_ptr<T> create(std::string vendor) {
         for (auto pair:_typeMap) {
             for (auto t: pair.second) {
                 if (t.is_derived_from<T>()) {
@@ -33,13 +36,14 @@ public:
         std::shared_ptr<rttr::library> lib = std::shared_ptr<rttr::library>(new rttr::library(libPath));
 
         if (!lib->load()) {
-//            LOG_ERROR << "load library error " << lib->get_error_string();
+            LOG(INFO) << "load library error " << lib->get_error_string();
         }
         {
             std::vector<rttr::type> temp;
+            LOG(INFO)<<lib->get_types().size();
             for (auto t : lib->get_types()) {
                 if (t.is_class() && !t.is_wrapper()) {
-//                    LOG_INFO << "find class " << t.get_name();
+                    LOG(INFO) << "find class " << t.get_name();
                     temp.push_back(t);
                     _types.push_back(t);
                 }

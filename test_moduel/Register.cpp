@@ -13,5 +13,5 @@ RTTR_PLUGIN_REGISTRATION {
                     rttr::metadata("API_TYPE", "WEB")
             )
             .constructor<>()
-            .method("out", rttr::select_overload<ReposeData()>(&test_moduel::out));
+            .method("out", rttr::select_overload<std::string()>(&test_moduel::out));
 };
